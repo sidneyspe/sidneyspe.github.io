@@ -21,7 +21,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "./email/contato.php",
+                url: "././email/contato.php",
                 type: "POST",
                 data: {
                     name: name,
@@ -49,7 +49,7 @@ $(function() {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Desculpe " + firstName + ", o servidor não está respondendo. Por favor, tente mais tarde :) !");
+                    $('#success > .alert-danger').append("<strong>Desculpe " + firstName + ", o servidor não está respondendo :(.\n Por favor, tente mais tarde :) !");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
