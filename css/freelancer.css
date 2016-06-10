@@ -4,7 +4,10 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-
+a:hover{
+  text-decoration:none; 
+  color: #fff;
+}
 a:hover{
   text-decoration:none; 
   color: #477f93;
