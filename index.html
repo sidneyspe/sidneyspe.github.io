@@ -1,259 +1,224 @@
-	<!DOCTYPE html>
-	<html lang="pt-br">
+<html ng-app="sidneyspe">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sidney Pimentel</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/freelancer.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 
-	<head>
-	 <meta charset="utf-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <meta name="description" content="">
-	    <meta name="author" content="">
-	    <title>Sidney Pimentel</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
 
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+<script src="lib/angular.js"></script>
+<script src="lib/jquery-2.2.4.min.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script src="lib/angular-timer-all.min.js"></script>
+<script src="lib/angular-timer-bower.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
+<script>
+		$(function () {
+		  $('[data-toggle="tooltip"]').tooltip()
+		})
+		angular.module("sidneyspe", ['timer']);
+		angular.module("sidneyspe").controller("sidneyspeController", function ($scope, $http) {
+			$scope.titulo = "Sidney Pimentel";
+			$scope.avatar = "img/perfil.png";
 
-	    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-	    <link href="css/bootstrap.min.css" rel="stylesheet">
+			$scope.linguagens =[
+				{nome: "C/C++", nivel: 3},
+				{nome: "C#", nivel: 3},
+				{nome: "JavaEE", nivel: 3}
+			];
 
-	    <!-- Custom CSS -->
-	    <link href="css/freelancer.css" rel="stylesheet">
+			$scope.bancoDeDados =[
+				{nome: "MySQL", nivel: 2},
+				{nome: "SQLite", nivel: 3},
+				{nome: "LightBase", nivel: 3}
+			];
 
-	    <!-- Custom Fonts -->
-	    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-	    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+			$scope.outros =[
+				{nome: "Java Server Pages (JSP)", nivel: 2},
+				{nome: "Java Server Faces (JSF)", nivel: 3},
+				{nome: "ASP NET MVC4", nivel: 3},
+				{nome: "Android SDK", nivel: 3},
+				{nome: "JavaFX", nivel: 3},
+				{nome: "Hibernate", nivel: 3},
+				{nome: "Entity Framework", nivel: 3},
+				{nome: "HTML5", nivel: 3},
+				{nome: "CSS3", nivel: 3},
+				{nome: "JavaScript", nivel: 3},
+				{nome: "AngularJS", nivel: 3},
+				{nome: "Maven", nivel: 3},
+				{nome: "SpringMVC", nivel: 3}
+				
+			];
 
-	    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	    <!--[if lt IE 9]>
-	        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	    <![endif]-->
+			$scope.frameworks =[
+				{nome: "Bootstrap", nivel: 3},
+				{nome: "Bootflat", nivel: 3},
+				{nome: "Materialize", nivel: 3},
+				{nome: "Material Design Lite", nivel: 3}
+			];
 
-	</head>
+			$scope.getNumber = function(num) { 
+				return new Array(num);   
+			}
 
-	<body id="page-top" class="index">
+		});
+	</script>
+</head>
+<body class="" ng-controller="sidneyspeController">
 
-	    <!-- Navigation -->
-	    <nav class="navbar navbar-default navbar-fixed-top">
-	        <div class="container">
-	            <!-- Brand and toggle get grouped for better mobile display -->
-	            <div class="navbar-header page-scroll">
-	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-	                    <span class="sr-only">Toggle navigation</span>
-	                    <span class="icon-bar"></span>
-	                    <span class="icon-bar"></span>
-	                    <span class="icon-bar"></span>
-	                </button>
-	                <a class="navbar-brand" href="#page-top">Sidney Pimentel</a>
-	            </div>
-
-	            <!-- Collect the nav links, forms, and other content for toggling -->
-	            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	                <ul class="nav navbar-nav navbar-right">
-	                    <li class="hidden">
-	                        <a href="#page-top"></a>
-	                    </li>
-	                    <li class="page-scroll">
-	                        <a href="#page-top">Início</a>
-	                    </li>
-	                    <li class="page-scroll">
-	                        <a href="#sobre">Sobre</a>
-	                    </li>
-	                    <li class="page-scroll">
-	                        <a href="#portifolio">Portfolio</a>
-	                    </li>
-	                    <li class="page-scroll">
-	                        <a href="#contato">Contato</a>
-	                    </li>
-	                   
-	                </ul>
-	            </div>
-	            <!-- /.navbar-collapse -->
-	        </div>
-	        <!-- /.container-fluid -->
-	    </nav>
-
-<!-- Header -->
-
-	 <header>
-	     <div class="container">
-	            <div class="row">
-	                <div class="col-lg-12">
-	                    <img class="img-responsive" src="img/profile.png" alt="">
-	                    <div class="intro-text">
-	                        <span class="name">Sidney Pimentel</span>
-	                        <hr class="star-primary">
-	                        <span class="skills">Desenvolvedor Web - Analísta de Usabilidade</span>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	</header>
-	   
-
-
-<!-- Sobre -->
-    <section class="success" id="sobre">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Sobre</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                   <p> Graduando em Ciência da Computação na Universidade Estadual da Paraíba (UEPB), atualmente é bolsista do projeto "Laboratório de usabilidade / Fatores Humanos" vinculado ao Núcleo de Tecnologia Estratégicas em Saúde (NUTES), anteriormente teve experiência no projeto "Ferramenta para Auxílio ao Diagnóstico de Câncer de Mama por Imagem" vinculado ao mesmo. </p>
-                  
-                </div>
-                <div class="col-lg-4">
-                 	<p> Experiência em Fatores Humanos (Avaliação Heurística, Shadowing e Teste de Usabilidade) em dispositivo médico. (Curso de Engenharia de Fatores Humanos)</p>
-                    <p>Experiência como estagiário na empresa Light Infocon como desenvolvedor web front-end (C# - Webapplication/MVC 4-5/ LightBase) (6 meses – 2015)</p>
-                  
-                </div>
-                <div class="col-lg-8 col-lg-offset-2">
-                  <p>Tem interesses em áreas como Desenvolvedor Front-End, Web Design, Usabilidade, Fatores Humanos, Experiência do Usuário, Processamento de Imagens, Visão Computacional.</p>
-
-                </div>
-
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4064506Z5"  target="_blank" class="btn btn-lg btn-outline">
-                        <i class="fa fa-external-link"></i> Curriculo Lattes
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
- <!-- Contato -->
-    <section id="contato">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Entre em contato! :)</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Nome</label>
-                                <input type="text" class="form-control" placeholder="Nome" id="name" required data-validation-required-message="Por favor, informe seu nome.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>E-mail</label>
-                                <input type="email" class="form-control" placeholder="E-mail" id="email" required data-validation-required-message="Por favor, informe seu e-mail.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Telefone</label>
-                                <input type="tel" class="form-control" placeholder="Telefone" id="phone" required data-validation-required-message="Por favor, informe seu número de telefone">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Mensagem</label>
-                                <textarea rows="5" class="form-control" placeholder="Mensagem" id="message" required data-validation-required-message="Por favor, informe a mensagem que deseja enviar."></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Enviar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-	<!-- Footer -->
-	<footer class="text-center">
-	    <div class="footer-above">
-	        <div class="container">
-	            <div class="row">
-	                <div class="footer-col col-md-4">
-	                    <h3>Endereço</h3>
-	                    <p>Campina Grande<br>Paraíba, Brasil</p>
-	                </div>
-	                <div class="footer-col col-md-4">
-	                    <h3>Páginas relacionadas</h3>
-	                    <ul class="list-inline">
-	                        <li>
-	                            <a href="https://www.facebook.com/profile.php?id=100009159047448" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-	                        </li>
-	                        <li>
-                                <a href="https://br.linkedin.com/in/sidney-pimentel-4ab52a82" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-	                        <li>
-	                            <a href="https://twitter.com/sidneyspe" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-	                        </li>
-	                    </ul>
-	                </div>
-	                <div class="footer-col col-md-4">
-	                    <h3>Sobre Sidney</h3>
-	                    <p>Graduando em Computação Universidade Estadual da Paraíba</a>.</p>
-	                </div>
-	            </div>
-	        </div>
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container">
+	    <div class="navbar-header page-scroll">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand texto-negrito" href="#">Sidney Pimentel</a>
 	    </div>
-	    <div class="footer-below">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-lg-12">
-	                    Copyright &copy; Sidney Pimentel, 2016
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</footer>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	     <ul class="nav navbar-nav navbar-right">
+	        <li><a href="#sobre">Sobre</a></li>
+	        <li><a href="#skills">Skills</a></li>
+	        <li><a href="#">Portifólio</a></li>
+	        <li><a href="#">Contato</a></li>       
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
 
+	<div class="container" id="sobre" style="padding-top: 70px;">
+		<div class="row">
+			<div class="col-md-2 col-xs-6">
+				<img src="{{avatar}}" class="imagem-avatar image-responsive">
+			</div>
+			<div class="col-md-10 col-xs-4">
+				<h1 class="texto-negrito">Sidney Pimentel</h1>
+				<h4 class="texto-light">Desenvolvedor</h4>				
+			</div>				
+		</div>
+		<div class="row texto-centralizado">
+			<a href="https://twitter.com/sidneyspe" target="_blank" class="btn fa fa-twitter fa-2x cor-azul"></a>
+			<a href="https://www.facebook.com/profile.php?id=100009159047448" target="_blank" class="btn fa fa-facebook fa-2x cor-azul"></a>
+			<a href="https://github.com/sidneyspe" target="_blank" class="btn fa fa-github fa-2x cor-azul"></a>
+			<a href="https://br.linkedin.com/in/sidney-pimentel-4ab52a82" target="_blank" class="btn fa fa-linkedin fa-2x cor-azul"></a>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="texto-negrito cor-azul">
+					<i class="fa fa-university" aria-hidden="true"></i> 
+					FORMAÇÃO
+				</h3>
+				<h4 class="texto-negrito"> Bacharel em Computação</h4>
+				<h5 class="texto-light"> Universidade Estadual da Paraíba - UEPB. 2016</h5>
+			</div>
+		
+			<div class="col-md-12">
+				<h3 class="texto-negrito cor-azul">
+					<i class="fa fa-terminal" aria-hidden="true"></i> 
+						EXPERIÊNCIA
+				</h3>
+				<ul>
+					<li>
+						<h4 class="texto-negrito"> Desenvolvedor C/C++ </h4>
+						<h5 class="texto-light"> Desenvolvimento de ferramenta utilizando C/C++, OpenCV, SVM</h5>
+						<h5 class="texto-light"> NUTES - 2012</h5>
 
-	    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-	    <div class="scroll-top page-scroll visible-xs visble-sm">
-	        <a class="btn btn-primary" href="#page-top">
+					</li>
+					<li>
+						<h4 class="texto-negrito"> Avaliação Heurística </h4>
+						<h5 class="texto-light"> Avaliação de heurísticas de softwares/hardwares focados em saúde realizada no Núcleo de Tecnologias Estratégicas em Saúde (NUTES)</h5>
+						<h5 class="texto-light"> NUTES - 2013</h5>
+					</li>
+					<li>
+						<h4 class="texto-negrito"> Desenvolvedor Web Full-Stack </h4>
+						<h5 class="texto-light"> Desenvolvimento web utilizando C#, WebApplication, MVC4, LightBase, HTML5, CSS3, JavaScript</h5>
+						<h5 class="texto-light"> Light Infocon - 2015</h5>
+					</li>
+					<li>
+						<h4 class="texto-negrito"> Fatores Humanos </h4>
+						<h5 class="texto-light"> Avaliação Heurística, Shadowing, Teste de Usabilidade em dispositivo médico </h5>
+						<h5 class="texto-light"> NUTES - 2015</h5>
+					</li>
+				</ul>
+			</div>	
+		</div>
+		<hr>
+	
+		<div class="row" id="skills">
+			<div class="col-md-12">
+				<h3 class="texto-negrito cor-azul">
+					<i class="fa fa-star" aria-hidden="true"></i> 
+						SKILLS
+				</h3>
+			</div>
+			<div class="col-md-3   ">
+				<div class="panel panel-info texto-light">
+				  <div class="panel-heading texto-negrito">Linguagens</div>
+				  <div class="panel-body">
+				  		<div class="row animated-if" ng-repeat="linguagem in linguagens">
+					   		<div class="container">
+								<h5> {{linguagem.nome}}</h5>
+							</div>									
+						</div>
+				  	</div>
+				</div>
+			</div>
+			<div class="col-md-3   ">
+				<div class="panel panel-info texto-light">
+					<div class="panel-heading texto-negrito">Banco de Dados</div>
+					  <div class="panel-body">
+					  		<div class="row animated-if" ng-repeat="banco in bancoDeDados">
+						   		<div class="container">
+									<h5> {{banco.nome}}</h5>
+								</div>									
+							</div>
+					  </div>
+				</div>
+			</div>
+			
+			<div class="col-md-3   ">
+				<div class="panel panel-info texto-light">
+					<div class="panel-heading texto-negrito">Frameworks Web</div>
+					  <div class="panel-body">
+					  		<div class="row animated-if" ng-repeat="framework in frameworks">
+						   		<div class="container">
+									<h5> {{framework.nome}}</h5>
+								</div>
+						</div>
+				  	</div>
+				</div>
+			</div>
+
+			<div class="col-md-3   ">
+				<div class="panel panel-info texto-light">
+					<div class="panel-heading texto-negrito">Outros</div>
+					  <div class="panel-body">
+					  		<div class="row animated-if" ng-repeat="outro in outros">
+						   		<div class="container">
+									<h5> {{outro.nome}}</h5>
+								</div>
+						</div>
+				  	</div>
+				</div>
+			</div>
+		</div>	
+		</div>		
+		
+		<div class="scroll-top page-scroll visible-xs visble-sm">
+	        <a class="btn btn-primary" href="#sobre">
 	            <i class="fa fa-chevron-up"></i>
 	        </a>
 	    </div>
 
+	<script src="lib/classie.js"></script>
+	<script src="lib/cbpAnimatedHeader.js"></script>
 
-
-
-
-	   
-	    <!-- jQuery -->
-	    <script src="js/jquery.js"></script>
-
-	    <!-- Bootstrap Core JavaScript -->
-	    <script src="js/bootstrap.min.js"></script>
-
-	    <!-- Plugin JavaScript -->
-	    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-	    <script src="js/classie.js"></script>
-	    <script src="js/cbpAnimatedHeader.js"></script>
-
-	    <!-- Contact Form JavaScript -->
-	    <script src="js/jqBootstrapValidation.js"></script>
-	    <script src="js/contato.js"></script>
-
-	    <!-- Custom Theme JavaScript -->
-	    <script src="js/freelancer.js"></script>
-
-	</body>
-
-
-	</html>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* Empty. Add your own CSS if you like */
+
+
+body, h1, h2, h3, h4, h5 nav, ul, p, span{
+  font-family: "Open Sans";  
+  font-style: normal;
+  font-variant: normal;  
+}
+
+
+
+
+.fundo-vermelho{
+    background-color: #C75C5C;
+}
+
+.cor-vermelha{
+    color: #C75C5C;
+}
+
+.fundo-preto{
+    background-color: #4d4b41;
+} 
+
+.cor-preto{
+    color: #4d4b41;
+}
+
+.cor-branco{
+    color: #fff;
+}
+.fundo-cinza{
+    background-color: #eee;
+}
+
+.cor-azul{
+  color: #5fa7c3;
+}
+
+.cor-azul-escuro{
+  color: #477f93;
+}
+
+.fundo-azul{
+  background-color: #5fa7c3;
+}
+
+.fundo-amarelo{
+  background-color:  #f5cf87;
+}
+.cor-amarelo{
+  color:  #f5cf87;
+}
+
+.texto-negrito{
+    font-weight:600;    
+}
+
+.texto-light{
+    font-weight:200;   
+}
+
+.texto-centralizado{
+   text-align:center
+}
+
+.centralizado{
+  margin-left: auto;
+  margin-right: auto;
+    
+}
+.margin{
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.margin-historico{
+    padding-bottom: 1%;
+}
+
+.imagem-avatar{
+     width: 125px; 
+     height: 125px;  
+     margin-left: auto;  
+     margin-right: auto;   
+     display: block;
+     
+}
+
+.imagem-avatar2{
+     width: 50px; 
+     height: 50px;  
+      margin-top: 4%;
+     margin-left: auto;  
+     margin-right: auto;   
+     display: block;
+     
+}
+
+.espaco{
+  padding-top: 2%;
+}
+
+.espaco-header{
+   padding-top: 1%;
+   padding-bottom: 1%;
+}
+
+.rodape {
+  position: absolute;
+  bottom:0;
+ }
+
+.panel-body-scroll {
+  min-height: 200px;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.animate-if {
+  background:white;
+  border:1px solid black;
+  padding:10px;
+}
+
+.animate-if.ng-enter, .animate-if.ng-leave {
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+  opacity:1;
+}
