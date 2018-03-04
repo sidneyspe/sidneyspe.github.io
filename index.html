@@ -1,226 +1,204 @@
-<html ng-app="sidneyspe">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sidney Pimentel</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="css/freelancer.css">
-<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+<!DOCTYPE html>
+<html>
 
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css">
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="semantic-ui/semantic.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
-<script src="lib/angular.js"></script>
-<script src="lib/jquery-2.2.4.min.js"></script>
-<script src="lib/bootstrap.js"></script>
-<script src="lib/angular-timer-all.min.js"></script>
-<script src="lib/angular-timer-bower.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
-<script>
-		$(function () {
-		  $('[data-toggle="tooltip"]').tooltip()
-		})
-		angular.module("sidneyspe", ['timer']);
-		angular.module("sidneyspe").controller("sidneyspeController", function ($scope, $http) {
-			$scope.titulo = "Sidney Pimentel";
-			$scope.avatar = "img/perfil.png";
 
-			$scope.linguagens =[
-				{nome: "C/C++", nivel: 3},
-				{nome: "C#", nivel: 3},
-				{nome: "JavaEE", nivel: 3}
-			];
+<body>
+  <style>
+    * {
 
-			$scope.bancoDeDados =[
-				{nome: "MySQL", nivel: 2},
-				{nome: "SQLite", nivel: 3},
-				{nome: "LightBase", nivel: 3}
-			];
+      font-family: 'Open Sans', sans-serif;
 
-			$scope.outros =[
-				{nome: "Java Server Pages (JSP)", nivel: 2},
-				{nome: "Java Server Faces (JSF)", nivel: 3},
-				{nome: "ASP NET MVC4", nivel: 3},
-				{nome: "Android SDK", nivel: 3},
-				{nome: "JavaFX", nivel: 3},
-				{nome: "Hibernate", nivel: 3},
-				{nome: "Entity Framework", nivel: 3},
-				{nome: "HTML5", nivel: 3},
-				{nome: "CSS3", nivel: 3},
-				{nome: "JavaScript", nivel: 3},
-				{nome: "AngularJS", nivel: 3},
-				{nome: "Maven", nivel: 3},
-				{nome: "SpringMVC", nivel: 3}
-				
-			];
 
-			$scope.frameworks =[
-				{nome: "Bootstrap", nivel: 3},
-				{nome: "Bootflat", nivel: 3},
-				{nome: "Materialize", nivel: 3},
-				{nome: "Material Design Lite", nivel: 3}
-			];
+    }
 
-			$scope.getNumber = function(num) { 
-				return new Array(num);   
-			}
+    .ui.fluid.container {
+      margin-top: 1%;
+      margin-bottom: 1%;
+    }
 
-		});
-	</script>
-</head>
-<body class="" ng-controller="sidneyspeController">
+    .ui.header {
+      /* text-transform: uppercase; */
+    }
 
-	<nav class="navbar navbar-default  navbar-fixed-top ">
-	  <div class="container">
-	    <div class="navbar-header page-scroll">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class=" fa fa-bars cor-preto"></span>
-	       
-	      </button>
-	      <a class="navbar-brand texto-negrito cor-branco" href="#">Sidney Pimentel</a>
-	    </div>
-	    <div class="collapse navbar-collapse" id="navbar-collapse">
-	     <ul class="nav navbar-nav navbar-right">
-	        <li><a class="cor-branco" href="#sobre">Sobre</a></li>
-	        <li><a class="cor-branco" href="#skills">Skills</a></li>
-	        <li><a class="cor-branco" href="#">Portifólio</a></li>
-	        <li><a class="cor-branco" href="#">Contato</a></li>       
-	      </ul>
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav>
+    .vertical-align {
+      margin-top: 20%;
+    }
 
-	<div class="container" id="sobre" style="padding-top: 70px;">
-		<div class="row">
-			<div class="col-md-2 col-xs-6">
-				<img src="{{avatar}}" class="imagem-avatar image-responsive">
-			</div>
-			<div class="col-md-10 col-xs-4">
-				<h1 class="texto-negrito">Sidney Pimentel</h1>
-				<h4 class="texto-light">Desenvolvedor</h4>				
-			</div>				
-		</div>
-		<div class="row texto-centralizado">
-			<a href="https://twitter.com/sidneyspe" target="_blank" class="btn btn-outline fa fa-twitter fa-2x cor-branco"></a>
-			<a href="https://www.facebook.com/profile.php?id=100009159047448" target="_blank" class="btn btn-outline fa fa-facebook fa-2x cor-branco"></a>
-			<a href="https://github.com/sidneyspe" target="_blank" class="btn btn-outline fa fa-github fa-2x cor-branco"></a>
-			<a href="https://br.linkedin.com/in/sidney-pimentel-4ab52a82" target="_blank" class="btn btn-outline fa fa-linkedin fa-2x cor-branco"></a>
-		</div>
-		<hr>
-		<div class="row">
-			<div class="col-md-12">
-				<h3 class="texto-negrito cor-azul">
-					<i class="fa fa-university" aria-hidden="true"></i> 
-					FORMAÇÃO
-				</h3>
-				<h4 class="texto-negrito"> Bacharel em Computação</h4>
-				<h5 class="texto-light"> Universidade Estadual da Paraíba - UEPB. 2016</h5>
-			</div>
-		
-			<div class="col-md-12">
-				<h3 class="texto-negrito cor-azul">
-					<i class="fa fa-terminal" aria-hidden="true"></i> 
-						EXPERIÊNCIA
-				</h3>
-				<ul>
-					<li>
-						<h4 class="texto-negrito"> Desenvolvedor Web Full-Stack </h4>
-						<h5 class="texto-light"> Desenvolvimento web utilizando C#, WebApplication, MVC4, LightBase, HTML5, CSS3, JavaScript</h5>
-						<h5 class="texto-light"> Light Infocon - 2015</h5>
-					</li>
+    .header-container {
+      background-color: #f4f4f4;
+      /* margin-bottom: 10px; */
+    }
 
-					<li>
-						<h4 class="texto-negrito"> Fatores Humanos </h4>
-						<h5 class="texto-light"> Avaliação Heurística, Shadowing, Teste de Usabilidade em dispositivo médico </h5>
-						<h5 class="texto-light"> NUTES - 2015</h5>
-					</li>
+    .display-table {
+      /* margin-top: 50px !important; */
+      display: table !important;
+    }
 
-					<li>
-						<h4 class="texto-negrito"> Avaliação Heurística </h4>
-						<h5 class="texto-light"> Avaliação de heurísticas de softwares/hardwares focados em saúde realizada no Núcleo de Tecnologias Estratégicas em Saúde (NUTES)</h5>
-						<h5 class="texto-light"> NUTES - 2013</h5>
-					</li>
+    .display-table-cell {
+      display: table-cell !important;
+      vertical-align: middle !important;
+    }
 
-					<li>
-						<h4 class="texto-negrito"> Desenvolvedor C/C++ </h4>
-						<h5 class="texto-light"> Desenvolvimento de ferramenta utilizando C/C++, OpenCV, SVM</h5>
-						<h5 class="texto-light"> NUTES - 2012</h5>
+    .display-inline {
+      display: inline !important;
+    }
+  </style>
+  <div class="ui fluid container">
+    <div class="header-container">
+      <div class="ui two column grid container display-table">
+        <div class="column display-table-cell">
+          <h2 class="ui header">
+            SIDNEY PIMENTEL
+            <div class="sub header">System Analyst / Software Engineering</div>
+          </h2>
+          <div class="ui medium icon brown buttons">
+            <a href="https://facebook.com/sidneyspe1" target="_blank" class="ui button"><i class="facebook f icon"></i></a>
+            <a href="https://br.linkedin.com/in/sidney-pimentel-4ab52a82" target="_blank" class="ui button"><i class="linkedin icon"></i></a>
+            <a href="https://github.com/sidneyspe" target="_blank" class="ui button"><i class="github icon"></i></a>
+            <a href="#" class="ui button"><i class="mail icon"></i> sidneyspe@gmail.com </a>
+          </div>
+        </div>
+        <div class="column display-inline">
+          <img src="sid2.jpg" class="ui medium centered circular image" alt="sidney">
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="ui column grid container">
+      <h3 class="ui header">EDUCATION</h3>
+    </div>
+    <div class="ui two column grid container display-table">
+      <div class="column display-table-cell">
+        <!-- <i class="huge university icon"></i> -->
+      </div>
+      <div class="column display-inline">
+        <h4 class="ui header">
+          Bachelor of Computer Science
+          <div class="sub header">Universidade Estadual da Paraíba, Paraíba, Brazil (2016)</div>
+      </h4>
+      </div>
+    </div>
+    <div class="ui column grid container">
+      <h3 class="ui header">ABOUT ME</h3>
+    </div>
+    <div class="ui two column grid container display-table">
+      <div class="column display-table-cell">
+        <!-- <i class="huge user icon"></i> -->
+      </div>
+      <div class="column display-inline">
+        <h4 class="ui header">
+          <div class="sub header"> Excellent brainstorming abilities, strong analytical skills, focused in user experience; </div>
+          <div class="sub header"> Enthusiastic for usability of systems, human factors, agile methodology; </div>
+          <div class="sub header"> Good communication and commitment to the team.</div>
+      </h4>
+      </div>
+    </div>
 
-					</li>
-				</ul>
-			</div>	
-		</div>
-		<hr>
-	
-		<div class="row" id="skills">
-			<div class="col-md-12">
-				<h3 class="texto-negrito cor-azul">
-					<i class="fa fa-star" aria-hidden="true"></i> 
-						SKILLS
-				</h3>
-			</div>
-			<div class="col-md-3   ">
-				<div class="panel panel-info texto-light">
-				  <div class="panel-heading texto-negrito">Linguagens</div>
-				  <div class="panel-body">
-				  		<div class="row animated-if" ng-repeat="linguagem in linguagens">
-					   		<div class="container">
-								<h5> {{linguagem.nome}}</h5>
-							</div>									
-						</div>
-				  	</div>
-				</div>
-			</div>
-			<div class="col-md-3   ">
-				<div class="panel panel-info texto-light">
-					<div class="panel-heading texto-negrito">Banco de Dados</div>
-					  <div class="panel-body">
-					  		<div class="row animated-if" ng-repeat="banco in bancoDeDados">
-						   		<div class="container">
-									<h5> {{banco.nome}}</h5>
-								</div>									
-							</div>
-					  </div>
-				</div>
-			</div>
-			
-			<div class="col-md-3   ">
-				<div class="panel panel-info texto-light">
-					<div class="panel-heading texto-negrito">Frameworks Web</div>
-					  <div class="panel-body">
-					  		<div class="row animated-if" ng-repeat="framework in frameworks">
-						   		<div class="container">
-									<h5> {{framework.nome}}</h5>
-								</div>
-						</div>
-				  	</div>
-				</div>
-			</div>
+    <div class="ui column grid container">
+      <h3 class="ui header">EXPERIENCE</h3>
+    </div>
+    <div class="ui two column grid container display-table">
+      <div class="column display-table-cell">
+        <!-- <i class="huge cubes icon"></i> -->
+      </div>
+      <div class="column display-inline">
+        <h4 class="ui header">
+          Systems Analyst with focus on Group management, usability and user experience
+          <div class="sub header">Software Practices Laboratory (SPLab) - UFCG, 2016 - current.</div>
+      </h4>
+        <h4 class="ui header">
+          Full stack web developer (C # - Webapplication / MVC 4-5 / LightBase)
+          <div class="sub header">Light Infocon, 6 months (internship), 2015</div>
+      </h4>
+        <h4 class="ui header">
+          Expertise in Human Factors (Heuristic Assessment, Shadow and Usability Test) in medical device.
+          <div class="sub header">Course of Engineering of Human Factors, 2014</div>
+      </h4>
+        <h4 class="ui header">
+          Experience in evaluating health-focused software / hardware heuristics
+          <div class="sub header">Nucleus of Strategic Technologies in Health (NUTES), 2013-2015.</div>
+      </h4>
+        <h4 class="ui header">
+          Experience in developing C # systems (Windows forms)
+          <div class="sub header">HopeBus - Bus ticket management system</div>
+      </h4>
+        <h4 class="ui header">
+          Front-end developer (Java, JSP, Maven, Spring MVC, HTML5, CSS3, JavaScript)
+          <div class="sub header">ECarona - Available carpool web system </div>
+          <div class="sub header">LeCode - Responsive game, to aid in the learning of algorithms</div>
+      </h4>
+        <h4 class="ui header">
+          Development of a C ++ image processing tool, use an OpenCV, SVM, LBP library.
+          <div class="sub header">Local Binary Patterns Applied to Breast Cancer Classification in Mammographies</div>
+      </h4>
+      </div>
+    </div>
+    <div class="ui column grid container">
+      <h3 class="ui header">TECHNICAL SKILLS</h3>
 
-			<div class="col-md-3   ">
-				<div class="panel panel-info texto-light">
-					<div class="panel-heading texto-negrito">Outros</div>
-					  <div class="panel-body">
-					  		<div class="row animated-if" ng-repeat="outro in outros">
-						   		<div class="container">
-									<h5> {{outro.nome}}</h5>
-								</div>
-						</div>
-				  	</div>
-				</div>
-			</div>
-		</div>	
-		</div>		
-		
-		<div class="scroll-top page-scroll visible-xs visble-sm">
-	        <a class="btn btn-outline" href="#sobre">
-	            <i class="fa fa-chevron-up"></i>
-	        </a>
-	    </div>
+    </div>
+    <div class="ui two column grid container display-table">
+      <div class="column display-table-cell">
+        <!-- <i class="huge tags icon"></i> -->
+      </div>
+      <div class="column display-inline">
 
-	<script src="lib/classie.js"></script>
-	<script src="lib/cbpAnimatedHeader.js"></script>
+        <div class="ui blue tag labels">
+
+          <a class="ui label">C/C++</a>
+          <a class="ui label">Java</a>
+          <a class="ui label">C#</a>
+          <a class="ui label">Grails</a>
+          <a class="ui label">Postgresql</a>
+          <a class="ui label">MySQL</a>
+          <a class="ui label">SQLite</a>
+          <a class="ui label">LightBase</a>
+          <a class="ui label">Apache</a>
+          <a class="ui label">Tomcat</a>
+          <a class="ui label">ASP NET MVC4</a>
+          <a class="ui label">Web API</a>
+          <a class="ui label">Android SDK</a>
+          <a class="ui label">JavaFX</a>
+          <a class="ui label">QT</a>
+          <a class="ui label">Hibernate</a>
+          <a class="ui label">Entity Framework</a>
+          <a class="ui label">HTML5</a>
+          <a class="ui label">CSS3</a>
+          <a class="ui label">JavaScript</a>
+          <a class="ui label">AngularJS</a>
+          <a class="ui label">Maven</a>
+          <a class="ui label">Spring MVC</a>
+          <a class="ui label">Gradle</a>
+          <a class="ui label">wkhtmltopdf</a>
+          <a class="ui label">LESS</a>
+          <a class="ui label">Semantic UI</a>
+          <a class="ui label">Bootstrap</a>
+          <a class="ui label">Bootflat</a>
+          <a class="ui label">Materialize</a>
+          <a class="ui label">Bulma</a>
+          <a class="ui label">Material Design Lite</a>
+          <a class="ui label">Github</a>
+          <a class="ui label">Bitbucket</a>
+          <a class="ui label">Gitlab</a>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+  </script>
+
+
 
 </body>
+
 </html>
