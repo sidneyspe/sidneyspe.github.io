@@ -1,202 +1,123 @@
 <!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html ng-app="sidneyspe">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>Sidney Pimentel</title>
-<link rel="stylesheet" type="text/css" href="css/semantic.min.css">
-<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="css/semantic.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap330.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/bootflat.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css" />
+<link rel="stylesheet" type="text/css" href="assets/css/icon.css" />
+
+<link rel="stylesheet" type="text/css" href="assets/css/site.css" />
+
+<script src="assets/js/libs/jquery-3.1.1.min.js"></script>
+<script src="assets/js/libs/bootstrap320.min.js"></script>
+<script src="assets/js/libs/angular.min.js"></script>
+<script src="assets/js/controller/sidneyspe.controller.js"></script>
 
 
 <body>
-  <style>
-    * {
 
-      font-family: 'Open Sans', sans-serif;
-
-
-    }
-
-    .ui.fluid.container {
-      margin-top: 1%;
-      margin-bottom: 1%;
-    }
-
-    .ui.header {
-      /* text-transform: uppercase; */
-    }
-
-    .vertical-align {
-      margin-top: 20%;
-    }
-
-    .header-container {
-      background-color: #f4f4f4;
-      /* margin-bottom: 10px; */
-    }
-
-    .display-table {
-      /* margin-top: 50px !important; */
-      display: table !important;
-    }
-
-    .display-table-cell {
-      display: table-cell !important;
-      vertical-align: middle !important;
-    }
-
-    .display-inline {
-      display: inline !important;
-    }
-  </style>
-  <div class="ui fluid container">
-    <div class="header-container">
-      <div class="ui two column grid container display-table">
-        <div class="column display-table-cell">
-          <h2 class="ui header">
-            SIDNEY PIMENTEL
-            <div class="sub header">System Analyst / Software Engineering</div>
+  <div class="container" ng-controller="SidneyspeController as vm" ng-cloak style="padding: 2%;">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-6 col-xs-6">
+          <h2>
+            {{vm.info.name}}
           </h2>
-          <div class="ui medium icon brown buttons">
-            <a href="https://facebook.com/sidneyspe1" target="_blank" class="ui button"><i class="facebook f icon"></i></a>
-            <a href="https://br.linkedin.com/in/sidney-pimentel-4ab52a82" target="_blank" class="ui button"><i class="linkedin icon"></i></a>
-            <a href="https://github.com/sidneyspe" target="_blank" class="ui button"><i class="github icon"></i></a>
-            <a href="mailto:sidneyspe@gmail.com" target="_top" class="ui button"><i class="mail icon"></i> sidneyspe@gmail.com </a>
+          <h5>{{vm.info.title}}</h5>
+          <div class="btn-group">
+            <a href="{{vm.facebook.url}}" target="_blank" class="btn btn-default"><i class="fa fa-{{vm.facebook.name}}"></i></a>
+            <a href="{{vm.linkedin.url}}" target="_blank" class="btn btn-default"><i class="fa fa-{{vm.linkedin.name}}"></i></a>
+            <a href="{{vm.github.url}}" target="_blank" class="btn btn-default"><i class="fa fa-{{vm.github.name}}"></i></a>
+            <a href="{{vm.mail.url}}" target="_blank" class="btn btn-default"><i class="fa fa-{{vm.mail.name}}"></i></a>
           </div>
-          <div class="ui small icon basic buttons">
-            <a href="#" class="ui disabled button" style="color: #444;"> Curriculum Vitae</a>
-            <a href="https://www.dropbox.com/s/r2yb1uthigpcm91/cvEN-US.pdf?dl=0" class="ui blue button"><i class="us flag"></i></a>
-            <a href="https://www.dropbox.com/s/1aiakf4ypmpza18/cvPT-BR.pdf?dl=0" class="ui green button"><i class="br flag"></i></a>
-            </div>
+
         </div>
-        <div class="column display-inline">
-          <img src="sid2.jpg" class="ui medium centered circular image" alt="sidney">
+        <div class="col-md-6 col-xs-6">
+          <img src="{{vm.info.image}}" class="img-rounded" alt="sidney" width="200" height="200">
+          <div class="btn-group">
+            <a href="#" class="btn btn-default" disabled> Curriculum Vitae</a>
+            <a href="{{cv.url}}" class="btn btn-default" ng-repeat="cv in vm.cv"> {{cv.name}} </a>
+          </div>
         </div>
       </div>
     </div>
     <br>
     <br>
-    <div class="ui column grid container">
+    <div class="row">
       <h3 class="ui header">EDUCATION</h3>
     </div>
-    <div class="ui two column grid container display-table">
-      <div class="column display-table-cell">
+    <div class="row">
+      <div class="col-md-6 col-xs-6">
+
         <!-- <i class="huge university icon"></i> -->
       </div>
-      <div class="column display-inline">
-        <h4 class="ui header">
+      <div class="col-md-6 col-xs-6">
+
+        <h5>
           Bachelor of Computer Science
-          <div class="sub header">Universidade Estadual da Paraíba, Paraíba, Brazil (2016)</div>
-      </h4>
+      </h5>
+        <h6>Universidade Estadual da Paraíba, Paraíba, Brazil (2016)</h6>
       </div>
     </div>
-    <div class="ui column grid container">
+    <div class="row">
       <h3 class="ui header">ABOUT ME</h3>
     </div>
-    <div class="ui two column grid container display-table">
-      <div class="column display-table-cell">
+    <div class="row">
+      <div class="col-md-6 col-xs-6">
+
         <!-- <i class="huge user icon"></i> -->
       </div>
-      <div class="column display-inline">
-        <h4 class="ui header">
-          <div class="sub header"> Excellent brainstorming abilities, strong analytical skills, focused in user experience; </div>
-          <div class="sub header"> Enthusiastic for usability of systems, human factors, agile methodology; </div>
-          <div class="sub header"> Good communication and commitment to the team.</div>
-      </h4>
+      <div class="col-md-6 col-xs-6">
+
+        <h5>
+          <h6> Excellent brainstorming abilities, strong analytical skills, focused in user experience; </h6>
+          <h6> Enthusiastic for usability of systems, human factors, agile methodology; </h6>
+          <h6> Good communication and commitment to the team.</h6>
+      </h5>
       </div>
     </div>
 
-    <div class="ui column grid container">
+    <div class="row">
       <h3 class="ui header">EXPERIENCE</h3>
     </div>
-    <div class="ui two column grid container display-table">
-      <div class="column display-table-cell">
+    <div class="row">
+      <div class="col-md-6 col-xs-6">
         <!-- <i class="huge cubes icon"></i> -->
       </div>
-      <div class="column display-inline">
-        <h4 class="ui header">
-          Systems Analyst with focus on Group management, usability and user experience
-          <div class="sub header">Software Practices Laboratory (SPLab) - UFCG, 2016 - current.</div>
-      </h4>
-        <h4 class="ui header">
-          Full stack web developer (C # - Webapplication / MVC 4-5 / LightBase)
-          <div class="sub header">Light Infocon, 6 months (internship), 2015</div>
-      </h4>
-        <h4 class="ui header">
-          Expertise in Human Factors (Heuristic Assessment, Shadow and Usability Test) in medical device.
-          <div class="sub header">Course of Engineering of Human Factors, 2014</div>
-      </h4>
-        <h4 class="ui header">
-          Experience in evaluating health-focused software / hardware heuristics
-          <div class="sub header">Nucleus of Strategic Technologies in Health (NUTES), 2013-2015.</div>
-      </h4>
-        <h4 class="ui header">
-          Experience in developing C # systems (Windows forms)
-          <div class="sub header">HopeBus - Bus ticket management system</div>
-      </h4>
-        <h4 class="ui header">
-          Front-end developer (Java, JSP, Maven, Spring MVC, HTML5, CSS3, JavaScript)
-          <div class="sub header">ECarona - Available carpool web system </div>
-          <div class="sub header">LeCode - Responsive game, to aid in the learning of algorithms</div>
-      </h4>
-        <h4 class="ui header">
-          Development of a C ++ image processing tool, use an OpenCV, SVM, LBP library.
-          <div class="sub header">Local Binary Patterns Applied to Breast Cancer Classification in Mammographies</div>
-      </h4>
+      <div class="col-md-6 col-xs-6">
+        <div class="row" ng-repeat="experience in vm.experiences">
+          <h5>{{experience.title}}</h5>
+          <h6>{{experience.description}}</h6>
+        </div>
       </div>
     </div>
-    <div class="ui column grid container">
+    <div class="row">
       <h3 class="ui header">TECHNICAL SKILLS</h3>
-
     </div>
-    <div class="ui two column grid container display-table">
-      <div class="column display-table-cell">
+    <div class="row">
+      <div class="col-md-6 col-xs-6">
         <!-- <i class="huge tags icon"></i> -->
       </div>
-      <div class="column display-inline">
-
-        <div class="ui blue tag labels">
-
-          <a class="ui label">C/C++</a>
-          <a class="ui label">Java</a>
-          <a class="ui label">C#</a>
-          <a class="ui label">Grails</a>
-          <a class="ui label">Postgresql</a>
-          <a class="ui label">MySQL</a>
-          <a class="ui label">SQLite</a>
-          <a class="ui label">LightBase</a>
-          <a class="ui label">Apache</a>
-          <a class="ui label">Tomcat</a>
-          <a class="ui label">ASP NET MVC4</a>
-          <a class="ui label">Web API</a>
-          <a class="ui label">Android SDK</a>
-          <a class="ui label">JavaFX</a>
-          <a class="ui label">QT</a>
-          <a class="ui label">Hibernate</a>
-          <a class="ui label">Entity Framework</a>
-          <a class="ui label">HTML5</a>
-          <a class="ui label">CSS3</a>
-          <a class="ui label">JavaScript</a>
-          <a class="ui label">AngularJS</a>
-          <a class="ui label">Maven</a>
-          <a class="ui label">Spring MVC</a>
-          <a class="ui label">Gradle</a>
-          <a class="ui label">wkhtmltopdf</a>
-          <a class="ui label">LESS</a>
-          <a class="ui label">Semantic UI</a>
-          <a class="ui label">Bootstrap</a>
-          <a class="ui label">Bootflat</a>
-          <a class="ui label">Materialize</a>
-          <a class="ui label">Bulma</a>
-          <a class="ui label">Material Design Lite</a>
-          <a class="ui label">Github</a>
-          <a class="ui label">Bitbucket</a>
-          <a class="ui label">Gitlab</a>
-
+      <div class="col-md-6 col-xs-6">
+        <div class="row">
+          <div class="input-group">
+            <span class="input-group-addon"> Search </span>
+            <input type="text" class="form-control" placeholder="search by tag" ng-model="vm.search">
+          </div>
+          <table class="table">
+            <tr>
+              <th>Tag</th>
+            </tr>
+            <tr ng-repeat="label in vm.labels | filter:vm.search">
+              <td>
+                <span class="label label-info"> {{label}}  </span>
+              </td>
+            </tr>
+          </table>
         </div>
-
-
       </div>
     </div>
   </div>
