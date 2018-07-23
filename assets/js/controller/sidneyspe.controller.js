@@ -31,12 +31,12 @@ angular.module('sidneyspe', [])
     vm.cv = [{
         name: "cvPT_BR",
         url: "https://www.dropbox.com/s/ci12y46uk2rce2i/sidney-pimentel-cvPT_BR.pdf?dl=0",
-        icon: ""
+        icon: "br flag"
       },
       {
         name: "cvEN_US",
         url: "https://www.dropbox.com/s/040520jhxba68kn/sidney-pimentel-cvEN_US.pdf?dl=0",
-        icon: ""
+        icon: "us flag"
       }
     ]
 

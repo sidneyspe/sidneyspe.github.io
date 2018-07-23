@@ -4,6 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title>Sidney Pimentel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="assets/css/semantic.min.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap330.min.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/bootflat.min.css" />
 <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css" />
@@ -39,7 +40,7 @@
           <img src="{{vm.info.image}}" class="img-rounded" alt="sidney" width="200" height="200">
           <div class="btn-group">
             <a href="#" class="btn btn-default" disabled> Curriculum Vitae</a>
-            <a href="{{cv.url}}" class="btn btn-default" ng-repeat="cv in vm.cv"> {{cv.name}} </a>
+            <a href="{{cv.url}}" class="btn btn-default" ng-repeat="cv in vm.cv"> <i class="{{cv.icon}}"></i>  </a>
           </div>
         </div>
       </div>
@@ -47,7 +48,7 @@
     <br>
     <br>
     <div class="row">
-      <h3 class="ui header">EDUCATION</h3>
+      <h5>EDUCATION</h5>
     </div>
     <div class="row">
       <div class="col-md-6 col-xs-6">
@@ -63,7 +64,7 @@
       </div>
     </div>
     <div class="row">
-      <h3 class="ui header">ABOUT ME</h3>
+      <h5>ABOUT ME</h5>
     </div>
     <div class="row">
       <div class="col-md-6 col-xs-6">
@@ -81,7 +82,7 @@
     </div>
 
     <div class="row">
-      <h3 class="ui header">EXPERIENCE</h3>
+      <h5>EXPERIENCE</h5>
     </div>
     <div class="row">
       <div class="col-md-6 col-xs-6">
@@ -95,7 +96,7 @@
       </div>
     </div>
     <div class="row">
-      <h3 class="ui header">TECHNICAL SKILLS</h3>
+      <h5>TECHNICAL SKILLS</h5>
     </div>
     <div class="row">
       <div class="col-md-6 col-xs-6">
@@ -107,7 +108,8 @@
             <span class="input-group-addon"> Search </span>
             <input type="text" class="form-control" placeholder="search by tag" ng-model="vm.search">
           </div>
-          <table class="table">
+          <br>
+          <table class="table table-striped">
             <tr>
               <th>Tag</th>
             </tr>
