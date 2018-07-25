@@ -37,10 +37,15 @@
 
         </div>
         <div class="col-md-6 col-xs-6">
-          <img src="{{vm.info.image}}" class="img-rounded" alt="sidney" width="200" height="200">
-          <div class="btn-group">
-            <a href="#" class="btn btn-default" disabled> Curriculum Vitae</a>
-            <a href="{{cv.url}}" class="btn btn-default" ng-repeat="cv in vm.cv"> <i class="{{cv.icon}}"></i>  </a>
+          <div class="col-md-12">
+            <img src="{{vm.info.image}}" class="img-rounded" alt="sidney" width="240" height="240">
+          </div>
+          <div class="col-md-12">
+            <br>
+            <div class="btn-group">
+              <a href="#" class="btn btn-default" disabled> {{vm.titles.cv}} </a>
+              <a href="{{cv.url}}" class="btn btn-default" ng-repeat="cv in vm.cv"> <i class="{{cv.icon}}"></i>  </a>
+            </div>
           </div>
         </div>
       </div>
@@ -48,41 +53,36 @@
     <br>
     <br>
     <div class="row">
-      <h5>EDUCATION</h5>
+      <h5>{{vm.titles.education}}</h5>
     </div>
     <div class="row">
       <div class="col-md-6 col-xs-6">
-
         <!-- <i class="huge university icon"></i> -->
       </div>
       <div class="col-md-6 col-xs-6">
-
-        <h5>
-          Bachelor of Computer Science
-      </h5>
-        <h6>Universidade Estadual da Paraíba, Paraíba, Brazil (2016)</h6>
+        <div class="row">
+          <h5> Bachelor of Computer Science </h5>
+          <h6> Universidade Estadual da Paraíba, Paraíba, Brazil (2016) </h6>
+        </div>
       </div>
     </div>
     <div class="row">
-      <h5>ABOUT ME</h5>
+      <h5>{{vm.titles.about}}</h5>
     </div>
     <div class="row">
       <div class="col-md-6 col-xs-6">
-
         <!-- <i class="huge user icon"></i> -->
       </div>
       <div class="col-md-6 col-xs-6">
-
-        <h5>
+        <div class="row">
           <h6> Excellent brainstorming abilities, strong analytical skills, focused in user experience; </h6>
           <h6> Enthusiastic for usability of systems, human factors, agile methodology; </h6>
           <h6> Good communication and commitment to the team.</h6>
-      </h5>
+        </div>
       </div>
     </div>
-
     <div class="row">
-      <h5>EXPERIENCE</h5>
+      <h5>{{vm.titles.experience}}</h5>
     </div>
     <div class="row">
       <div class="col-md-6 col-xs-6">
@@ -90,13 +90,37 @@
       </div>
       <div class="col-md-6 col-xs-6">
         <div class="row" ng-repeat="experience in vm.experiences">
-          <h5>{{experience.title}}</h5>
-          <h6>{{experience.description}}</h6>
+
+
+          <div class="timeline">
+              <dl ng-repeat="image in vm.images">
+                <dd ng-class="$even ? 'pos-right clearfix' : 'pos-left clearfix'">
+                  <div class="circ" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{ image.created_time | date: 'medium' }}"></div>
+                  <!-- <div class="time">{{ image.created_time | date: 'MMM dd' }}</div> -->
+                  <div class="events">
+                    <div class="pull-left">
+                      <img class="events-object img-rounded" src="{{image.url}}">
+                    </div>
+                    <div class="events-body">
+                      <h4 class="events-heading">{{experience.title}}</h4>
+                      <p>
+                        {{experience.description}}
+                      </p>
+                    </div>
+                  </div>
+                </dd>
+                <!-- <dt ng-if="(image.created_time | date: 'MMM') != (vm.images[$index + 1].created_time | date: 'MMM') ">{{ image.created_time | date: 'MMM' }}</dt> -->
+              </dl>
+            </div>
+
+
+          <!-- <h5>{{experience.title}}</h5>
+          <h6>{{experience.description}}</h6> -->
         </div>
       </div>
     </div>
     <div class="row">
-      <h5>TECHNICAL SKILLS</h5>
+      <h5>{{vm.titles.skills}}</h5>
     </div>
     <div class="row">
       <div class="col-md-6 col-xs-6">
@@ -109,26 +133,17 @@
             <input type="text" class="form-control" placeholder="search by tag" ng-model="vm.search">
           </div>
           <br>
-          <table class="table table-striped">
-            <tr>
-              <th>Tag</th>
-            </tr>
-            <tr ng-repeat="label in vm.labels | filter:vm.search">
-              <td>
-                <span class="label label-info"> {{label}}  </span>
-              </td>
-            </tr>
-          </table>
+          <span class="label label-info" ng-repeat="label in vm.labels | filter:vm.search">
+
+              <span > {{label}}  </span>
+              &nbsp;
+
+          </span>
         </div>
       </div>
     </div>
   </div>
-
   <script>
   </script>
-
-
-
 </body>
-
 </html>

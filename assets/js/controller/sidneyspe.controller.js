@@ -7,6 +7,18 @@ angular.module('sidneyspe', [])
       title: "System Analyst / Software Engineering",
       image: "profile.jpg"
     };
+
+    vm.titles =
+      {
+        education : "EDUCATION",
+        about: "ABOUT ME",
+        experience: "EXPERIENCE",
+        skills: "TECHNICAL SKILLS",
+        cv: "Curriculum Vitae"
+      };
+
+
+
     vm.linkedin = {
       name: "linkedin",
       url: "https://br.linkedin.com/in/sidney-pimentel-4ab52a82",

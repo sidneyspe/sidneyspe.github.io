@@ -1,0 +1,8 @@
+.label::after {content:"\00a0";}
+
+.label::after {
+  height: 1em;
+  width: 1em;
+  display: inline-block;
+  background: #00f;
+}
