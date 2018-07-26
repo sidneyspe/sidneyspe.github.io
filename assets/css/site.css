@@ -1,8 +1,8 @@
-.label::after {content:"\00a0";}
+.float{
+  float: left;
+  padding: 5px;
+}
 
-.label::after {
-  height: 1em;
-  width: 1em;
-  display: inline-block;
-  background: #00f;
+.row{
+  margin:0px;
 }

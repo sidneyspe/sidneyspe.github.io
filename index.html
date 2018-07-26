@@ -22,8 +22,7 @@
 
   <div class="container" ng-controller="SidneyspeController as vm" ng-cloak style="padding: 2%;">
     <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-6 col-xs-6">
+        <div class="col-md-6 col-xs-12">
           <h2>
             {{vm.info.name}}
           </h2>
@@ -34,11 +33,11 @@
             <a href="{{vm.github.url}}" target="_blank" class="btn btn-default"><i class="fa fa-{{vm.github.name}}"></i></a>
             <a href="{{vm.mail.url}}" target="_blank" class="btn btn-default"><i class="fa fa-{{vm.mail.name}}"></i></a>
           </div>
-
         </div>
-        <div class="col-md-6 col-xs-6">
+        <div class="col-md-6 col-xs-12">
           <div class="col-md-12">
-            <img src="{{vm.info.image}}" class="img-rounded" alt="sidney" width="240" height="240">
+              <br>
+            <img src="{{vm.info.image}}" class="img-rounded" alt="sidney" width="260" height="260">
           </div>
           <div class="col-md-12">
             <br>
@@ -48,7 +47,6 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
     <br>
     <br>
@@ -56,10 +54,10 @@
       <h5>{{vm.titles.education}}</h5>
     </div>
     <div class="row">
-      <div class="col-md-6 col-xs-6">
+      <div class="col-md-6 col-xs-12">
         <!-- <i class="huge university icon"></i> -->
       </div>
-      <div class="col-md-6 col-xs-6">
+      <div class="col-md-6 col-xs-12">
         <div class="row">
           <h5> Bachelor of Computer Science </h5>
           <h6> Universidade Estadual da Paraíba, Paraíba, Brazil (2016) </h6>
@@ -70,10 +68,10 @@
       <h5>{{vm.titles.about}}</h5>
     </div>
     <div class="row">
-      <div class="col-md-6 col-xs-6">
+      <div class="col-md-6 col-xs-12">
         <!-- <i class="huge user icon"></i> -->
       </div>
-      <div class="col-md-6 col-xs-6">
+      <div class="col-md-6 col-xs-12">
         <div class="row">
           <h6> Excellent brainstorming abilities, strong analytical skills, focused in user experience; </h6>
           <h6> Enthusiastic for usability of systems, human factors, agile methodology; </h6>
@@ -85,33 +83,33 @@
       <h5>{{vm.titles.experience}}</h5>
     </div>
     <div class="row">
-      <div class="col-md-6 col-xs-6">
+      <div class="col-md-6 col-xs-12">
         <!-- <i class="huge cubes icon"></i> -->
       </div>
-      <div class="col-md-6 col-xs-6">
-        <div class="row" ng-repeat="experience in vm.experiences">
+      <div class="col-md-6 col-xs-12">
+        <div class="row">
 
 
           <div class="timeline">
-              <dl ng-repeat="image in vm.images">
-                <dd ng-class="$even ? 'pos-right clearfix' : 'pos-left clearfix'">
-                  <div class="circ" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{ image.created_time | date: 'medium' }}"></div>
-                  <!-- <div class="time">{{ image.created_time | date: 'MMM dd' }}</div> -->
-                  <div class="events">
-                    <div class="pull-left">
-                      <img class="events-object img-rounded" src="{{image.url}}">
-                    </div>
-                    <div class="events-body">
-                      <h4 class="events-heading">{{experience.title}}</h4>
-                      <p>
-                        {{experience.description}}
-                      </p>
-                    </div>
+            <dl ng-repeat="experience in vm.experiences">
+              <dd ng-class="$even ? 'pos-right clearfix' : 'pos-left clearfix'">
+                <div class="circ" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{{ image.created_time | date: 'medium' }}"></div>
+                <!-- <div class="time">{{ image.created_time | date: 'MMM dd' }}</div> -->
+                <div class="events">
+                  <div class="pull-left">
+                    <img class="events-object img-rounded">
                   </div>
-                </dd>
-                <!-- <dt ng-if="(image.created_time | date: 'MMM') != (vm.images[$index + 1].created_time | date: 'MMM') ">{{ image.created_time | date: 'MMM' }}</dt> -->
-              </dl>
-            </div>
+                  <div class="events-body">
+                    <h4 class="events-heading">{{experience.title}}</h4>
+                    <p>
+                      {{experience.description}}
+                    </p>
+                  </div>
+                </div>
+              </dd>
+              <!-- <dt ng-if="(image.created_time | date: 'MMM') != (vm.images[$index + 1].created_time | date: 'MMM') ">{{ image.created_time | date: 'MMM' }}</dt> -->
+            </dl>
+          </div>
 
 
           <!-- <h5>{{experience.title}}</h5>
@@ -123,22 +121,21 @@
       <h5>{{vm.titles.skills}}</h5>
     </div>
     <div class="row">
-      <div class="col-md-6 col-xs-6">
+      <div class="col-md-6 col-xs-12">
         <!-- <i class="huge tags icon"></i> -->
       </div>
-      <div class="col-md-6 col-xs-6">
+      <div class="col-md-6 col-xs-12">
         <div class="row">
           <div class="input-group">
             <span class="input-group-addon"> Search </span>
             <input type="text" class="form-control" placeholder="search by tag" ng-model="vm.search">
           </div>
           <br>
-          <span class="label label-info" ng-repeat="label in vm.labels | filter:vm.search">
-
-              <span > {{label}}  </span>
-              &nbsp;
-
-          </span>
+          <div class="float" ng-repeat="label in vm.labels | filter:vm.search">
+            <span class="label label-info">
+            {{label}}
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -146,4 +143,5 @@
   <script>
   </script>
 </body>
+
 </html>
